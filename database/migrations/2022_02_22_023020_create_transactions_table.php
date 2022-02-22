@@ -15,6 +15,16 @@ return new class extends Migration
     {
         Schema::create('transactions', function (Blueprint $table) {
             $table->id();
+            $table->string('name')->nullable();
+            $table->string('email')->nullable();
+            $table->string('address')->nullable();
+            $table->string('phone')->nullable();
+            $table->string('courier')->nullable();
+            $table->string('payment')->default('Midtrans');
+            $table->string('payment_url')->nullable();
+            $table->bigInteger('total_price')->default(0);
+            $table->string('status')->default('Pending');
+            $table->softDeletes();
             $table->timestamps();
         });
     }
