@@ -15,6 +15,8 @@ return new class extends Migration
     {
         Schema::create('carts', function (Blueprint $table) {
             $table->id();
+            $table->bigInteger('users_id');
+            $table->bigInteger('products_id');
             $table->timestamps();
         });
     }
