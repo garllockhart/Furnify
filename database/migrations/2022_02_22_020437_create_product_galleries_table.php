@@ -15,6 +15,10 @@ return new class extends Migration
     {
         Schema::create('product_galleries', function (Blueprint $table) {
             $table->id();
+            $table->bigInteger('products_id');
+            $table->string('url');
+            $table->boolean('is_featured')->default(false);
+            $table->softDeletes();
             $table->timestamps();
         });
     }
